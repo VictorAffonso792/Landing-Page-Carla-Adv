@@ -351,19 +351,6 @@ h2, h3, h4, .logo-text h1 {
     margin: 0 auto;
 }
 
-.img-frame {
-    position: relative;
-    border: 2px solid #D4AF37; /* Cor dourada/ouro */
-    padding: 5px; /* Espaço entre a moldura e a foto */
-    background-color: #fff; /* Opcional: fundo branco para a moldura */
-}
-
-.img-frame img {
-    width: 100%;
-    height: auto;
-    display: block; /* Remove espaços vazios na base da imagem */
-    object-fit: cover; /* Garante que a foto preencha bem o espaço */
-}
 
 
 /* ==========================================================================
