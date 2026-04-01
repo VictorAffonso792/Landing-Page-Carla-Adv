@@ -509,6 +509,12 @@ h2, h3, h4, .logo-text h1 {
     margin-bottom: 20px;
 }
 
+.container-foti {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .footer-legal {
     display: flex;
     justify-content: space-between;
@@ -516,6 +522,8 @@ h2, h3, h4, .logo-text h1 {
     font-size: 0.85rem;
     color: #aaa;
 }
+
+
 
 .legal-links {
     display: flex;
