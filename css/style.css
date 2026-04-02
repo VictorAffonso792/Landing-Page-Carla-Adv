@@ -500,6 +500,580 @@ h2, h3, h4, .logo-text h1 {
 }
 
 /* ==========================================================================
+   Utilitários Comuns às Novas Seções
+   ========================================================================== */
+.section-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold-solid);
+    margin-bottom: 14px;
+    position: relative;
+    padding-left: 22px;
+}
+.section-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background: var(--gold-gradient);
+}
+.section-label--light {
+    color: #FAD67B;
+}
+
+.section-label--forti {
+    color: #b69135;
+}
+
+.section-label--light::before {
+    background: #FAD67B;
+}
+.btn-whatsapp-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   Seção 2 — Caminho para Aposentadoria
+   ========================================================================== */
+.secao-caminho {
+    padding: 100px 0;
+    background: var(--white);
+}
+.caminho-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.caminho-texto h3 {
+    font-size: 2.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.caminho-texto p {
+    color: var(--text-mid);
+    margin-bottom: 28px;
+}
+.alerta-box {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff8f0;
+    border-left: 4px solid var(--gold-solid);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+.alerta-icon {
+    color: var(--gold-solid);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.caminho-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(196, 185, 183, 0.3);
+    transition: all 0.3s ease;
+}
+.step-item:last-child { border-bottom: none; }
+.step-item:hover .step-num {
+    background: var(--gold-gradient);
+    color: #fff;
+    border-color: transparent;
+}
+.step-num {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--nude-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-solid);
+    transition: all 0.3s ease;
+}
+.step-desc strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+.step-desc span {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+}
+
+/* ==========================================================================
+   Seção 3 — Quem tem direito
+   ========================================================================== */
+   .secao-direito {
+    padding: 100px 0;
+    background: var(--text-dark);
+}
+.secao-direito .section-intro h3 {
+    color: var(--white);
+    font-size: 2.1rem;
+    margin-bottom: 15px;
+}
+.secao-direito .section-intro p {
+    color: var(--off-white);
+    opacity: 0.85;
+}
+.direito-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 50px;
+}
+.direito-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+.direito-card:hover {
+    background: rgba(250, 214, 123, 0.12);
+    border-color: rgba(250, 214, 123, 0.4);
+    transform: translateY(-6px);
+}
+.direito-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FAD67B;
+}
+.direito-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+}
+.direito-card p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Badge abaixo dos cards */
+.direito-badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+.badge-destaque {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(250, 214, 123, 0.35);
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #FAD67B;
+    text-decoration: none;
+    transition: background 0.25s, border-color 0.25s;
+}
+.badge-destaque:hover {
+    background: rgba(250, 214, 123, 0.15);
+    border-color: #FAD67B;
+}
+
+.direito-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+/* ==========================================================================
+   Seção 4 — Tipos de Aposentadoria
+   ========================================================================== */
+.secao-tipos {
+    padding: 100px 0;
+    background: var(--off-white);
+}
+.secao-tipos .section-intro h3 { color: var(--text-dark); }
+.tipos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 50px;
+    border: 1px solid rgba(196, 185, 183, 0.4);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.tipo-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 40px;
+    background: var(--white);
+    border-bottom: 1px solid rgba(196, 185, 183, 0.3);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+.tipo-item:last-child { border-bottom: none; }
+.tipo-item:hover {
+    background: #faf9f7;
+    padding-left: 50px;
+}
+.tipo-item:hover .tipo-num {
+    background: var(--gold-gradient);
+    color: #fff;
+    border-color: transparent;
+}
+.tipo-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--gold-solid);
+    min-width: 48px;
+    text-align: center;
+    font-weight: 600;
+    border-right: 1.5px solid var(--nude-bg);
+    padding-right: 30px;
+    transition: all 0.3s ease;
+}
+.tipo-info { flex: 1; }
+.tipo-info h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+.tipo-info p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    margin: 0;
+}
+.tipo-icon-right {
+    color: var(--nude-bg);
+    font-size: 1.4rem;
+    margin-left: auto;
+    transition: color 0.3s ease;
+}
+.tipo-item:hover .tipo-icon-right {
+    color: var(--gold-solid);
+}
+
+/* ==========================================================================
+   Seção 5 — Cálculo do Benefício
+   ========================================================================== */
+.secao-calculo {
+    padding: 100px 0;
+    background: var(--nude-bg);
+}
+.calculo-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+}
+.calculo-visual {
+    text-align: center;
+}
+.calculo-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 20px 60px rgba(158, 124, 80, 0.3);
+    position: relative;
+}
+.calculo-circle::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(158, 124, 80, 0.4);
+}
+.calculo-porcentagem {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+}
+.calculo-label-inner {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.calculo-sub {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-top: 10px;
+    font-style: italic;
+}
+.calculo-texto h3 {
+    font-size: 2.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.calculo-texto p {
+    color: var(--text-dark);
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Seção 6 — Regras de Transição
+   ========================================================================== */
+.secao-transicao {
+    padding: 100px 0;
+    background: var(--text-dark);
+}
+.transicao-header {
+    margin-bottom: 50px;
+}
+.transicao-header h3 {
+    font-size: 2.1rem;
+    color: var(--white);
+    margin-top: 4px;
+}
+.transicao-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.transicao-texto p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+}
+.transicao-destaque {
+    background: rgba(250, 214, 123, 0.12);
+    border-left: 3px solid #FAD67B;
+    padding: 16px 20px;
+    border-radius: 0 4px 4px 0;
+    color: #FAD67B !important;
+    font-weight: 600;
+    margin-bottom: 32px !important;
+}
+.transicao-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.transicao-mini {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 22px 24px;
+    gap: 4px;
+}
+.transicao-mini--gold {
+    background: rgba(250, 214, 123, 0.1);
+    border-color: rgba(250, 214, 123, 0.3);
+}
+.mini-icon {
+    font-size: 1.3rem;
+    color: #FAD67B;
+    margin-bottom: 8px;
+}
+.transicao-mini strong {
+    color: #fff;
+    font-size: 1rem;
+}
+.mini-regra-geral {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+.mini-plus {
+    font-size: 0.82rem;
+    color: #FAD67B;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Seção 7 — Planejamento Previdenciário
+   ========================================================================== */
+.secao-planejamento {
+    padding: 100px 0;
+    background: var(--white);
+}
+.planejamento-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.plan-texto h3 {
+    font-size: 2.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.plan-texto p {
+    color: var(--text-mid);
+    margin-bottom: 32px;
+}
+.plan-beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.plan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 22px;
+    background: var(--off-white);
+    border-radius: 4px;
+    font-size: 0.93rem;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+.plan-item:hover {
+    background: #f0ece9;
+    transform: translateX(6px);
+}
+.plan-item i {
+    color: var(--gold-solid);
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Seção 8 — Revisão de Aposentadoria
+   ========================================================================== */
+.secao-revisao-apo {
+    padding: 100px 0;
+    background: var(--off-white);
+}
+.revisao-apo-layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.revisao-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(158, 124, 80, 0.25);
+    flex-shrink: 0;
+}
+.revisao-badge i {
+    font-size: 2.5rem;
+}
+.revisao-badge span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 0 16px;
+}
+.revisao-apo-conteudo h3 {
+    font-size: 2.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.revisao-apo-conteudo p {
+    color: var(--text-mid);
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   Seção 9 — Atendimento Especializado
+   ========================================================================== */
+.secao-atendimento {
+    padding: 100px 0;
+    background: var(--text-dark);
+}
+.atendimento-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.atendimento-texto h3 {
+    font-size: 2.1rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.atendimento-texto p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+}
+.atendimento-modos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modo-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.modo-card:hover {
+    background: rgba(255,255,255,0.11);
+    border-color: rgba(250,214,123,0.3);
+}
+.modo-card i {
+    font-size: 2rem;
+    color: #FAD67B;
+    margin-bottom: 14px;
+    display: block;
+}
+.modo-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+.modo-card p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
    RESPONSIVIDADE
    ========================================================================== */
 
@@ -516,6 +1090,25 @@ h2, h3, h4, .logo-text h1 {
 
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .caminho-layout,
+    .calculo-layout,
+    .planejamento-layout,
+    .atendimento-layout,
+    .transicao-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .direito-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .revisao-apo-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .revisao-badge {
+        margin: 0 auto;
     }
 }
 
@@ -535,7 +1128,6 @@ h2, h3, h4, .logo-text h1 {
         align-items: center;
     }
 
-    /* CORREÇÃO: logo e texto lado a lado no mobile */
     .logo-area {
         flex-direction: row;
         justify-content: center;
@@ -547,7 +1139,6 @@ h2, h3, h4, .logo-text h1 {
         height: 55px;
     }
 
-    /* CORREÇÃO: nunca esconder o nome */
     .logo-text {
         display: block;
     }
@@ -605,6 +1196,44 @@ h2, h3, h4, .logo-text h1 {
     .footer-map iframe {
         height: 200px;
     }
+
+    .secao-caminho,
+    .secao-direito,
+    .secao-tipos,
+    .secao-calculo,
+    .secao-transicao,
+    .secao-planejamento,
+    .secao-revisao-apo,
+    .secao-atendimento {
+        padding: 70px 0;
+    }
+    .caminho-texto h3,
+    .calculo-texto h3,
+    .plan-texto h3,
+    .revisao-apo-conteudo h3,
+    .atendimento-texto h3,
+    .transicao-header h3,
+    .secao-direito .section-intro h3 {
+        font-size: 1.7rem;
+    }
+    .direito-grid {
+        grid-template-columns: 1fr;
+    }
+    .tipo-item {
+        padding: 22px 20px;
+    }
+    .tipo-item:hover {
+        padding-left: 28px;
+    }
+    .calculo-circle {
+        width: 160px;
+        height: 160px;
+    }
+    .calculo-porcentagem { font-size: 2.4rem; }
+    .atendimento-modos {
+        flex-direction: row;
+    }
+    .modo-card { flex: 1; }
 }
 
 /* Telas muito pequenas */
@@ -628,4 +1257,116 @@ h2, h3, h4, .logo-text h1 {
     .hero h2 {
         font-size: 1.6rem;
     }
+
+    .atendimento-modos {
+        flex-direction: column;
+    }
+}
+
+/* Formulário aprimorado */
+.form-contato {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 40px 36px;
+}
+.form-section-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-solid);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form-section-tag::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(196, 185, 183, 0.4);
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.form-group {
+    margin-bottom: 18px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    margin-bottom: 7px;
+}
+.obrigatorio { color: var(--gold-solid); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--nude-bg);
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    background: var(--white);
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold-solid);
+    box-shadow: 0 0 0 3px rgba(158, 124, 80, 0.1);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-divider {
+    border: none;
+    border-top: 1px solid rgba(196, 185, 183, 0.4);
+    margin: 24px 0;
+}
+.radio-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.radio-opt {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 16px;
+    border: 1px solid var(--nude-bg);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+    user-select: none;
+}
+.radio-opt input[type=radio] { display: none; }
+.radio-opt.selected {
+    border-color: var(--gold-solid);
+    background: rgba(158, 124, 80, 0.07);
+    color: var(--gold-solid);
+    font-weight: 600;
+}
+.form-privacy {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .form-contato { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; }
 }
