@@ -14,17 +14,15 @@
 * {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     color: black;
     background-color: var(--off-white);
-    /* Base aumentada para 18px */
-    font-size: 18px; 
-    /* Altura de linha ajustada para 1.7 para melhor leitura em 18px */
-    line-height: 1.7; 
+    font-size: 18px;
+    line-height: 1.7;
     margin: 0;
     -webkit-font-smoothing: antialiased;
 }
@@ -67,14 +65,14 @@ h2, h3, h4, .logo-text h1 {
 }
 
 .logo-img {
-    height: 90px; 
+    height: 90px;
     width: auto;
     display: block;
     object-fit: contain;
 }
 
 .logo-text h1 {
-    font-size: 1.5rem; /* ~27px */
+    font-size: 1.5rem;
     color: var(--text-dark);
     margin: 0;
 }
@@ -85,7 +83,6 @@ h2, h3, h4, .logo-text h1 {
     display: block;
 }
 
-/* Estilo para a frase centralizada no header */
 .header-info-center {
     flex: 1;
     text-align: center;
@@ -101,7 +98,6 @@ h2, h3, h4, .logo-text h1 {
     display: inline-block;
 }
 
-/* Linhas decorativas sutis ao lado da frase (opcional) */
 .header-info-center span::before,
 .header-info-center span::after {
     content: "";
@@ -113,13 +109,6 @@ h2, h3, h4, .logo-text h1 {
     margin: 0 10px;
 }
 
-/* Responsividade: Esconde ou ajusta no mobile */
-@media (max-width: 992px) {
-    .header-info-center {
-        display: none; /* Esconde em tablets e celulares para não apertar o menu */
-    }
-}
-
 /* ==========================================================================
    Botões
    ========================================================================== */
@@ -128,7 +117,7 @@ h2, h3, h4, .logo-text h1 {
     text-decoration: none;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 1rem; /* 18px */
+    font-size: 1rem;
     transition: all 0.3s ease;
     display: inline-block;
     cursor: pointer;
@@ -170,7 +159,7 @@ h2, h3, h4, .logo-text h1 {
 }
 
 .hero h2 {
-    font-size: 3rem; /* ~54px */
+    font-size: 3rem;
     margin-bottom: 25px;
     max-width: 900px;
     margin-inline: auto;
@@ -178,7 +167,7 @@ h2, h3, h4, .logo-text h1 {
 }
 
 .hero p {
-    font-size: 1.2rem; /* ~21px */
+    font-size: 1.2rem;
     margin-bottom: 35px;
     color: var(--text-dark);
     max-width: 700px;
@@ -186,14 +175,9 @@ h2, h3, h4, .logo-text h1 {
 }
 
 /* ==========================================================================
-   Seções de Conteúdo (Cards e Revisão)
+   Seção de Especialização (Cards)
    ========================================================================== */
-/* Seção de Cards - Layout Renovado */
-/* ==========================================================================
-   Seção de Especialização (Cards) - Ajustada para Visibilidade e Interação
-   ========================================================================= */
-
-   .revisao {
+.revisao {
     padding: 100px 0;
     background-color: var(--off-white);
 }
@@ -209,41 +193,32 @@ h2, h3, h4, .logo-text h1 {
     margin-bottom: 15px;
 }
 
-/* Grid configurada para 3 colunas fixas no desktop */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Estilização Individual do Card - Base */
 .card {
     background: var(--white);
-    padding: 50px 30px; /* Mais respiro */
-    border-radius: 4px; /* Mais sério/formal */
-    
-    /* Borda inicial fina e amarela/clara */
-    border: 1px solid rgba(158, 124, 80, 0.1); 
-    border-bottom: 4px solid #FAD67B; /* Amarelo claro original */
-    
+    padding: 50px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(158, 124, 80, 0.1);
+    border-bottom: 4px solid #FAD67B;
     text-align: center;
-    transition: all 0.4s ease; /* Transição suave para todas as propriedades */
+    transition: all 0.4s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-/* Efeito de Hover (Mouse em cima) - Pedido do Usuário */
 .card:hover {
-    transform: translateY(-8px); /* Eleva levemente o card */
-    box-shadow: 0 15px 35px rgba(158, 124, 80, 0.1); /* Sombra mais profunda */
-    
-    /* MUDANÇA: Borda inferior muda do amarelo claro para o dourado escuro sólido */
-    border-bottom-color: var(--gold-solid); 
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(158, 124, 80, 0.1);
+    border-bottom-color: var(--gold-solid);
 }
 
-/* Container do Ícone Jurídico - Minimalista e Sóbrio */
 .card-icon-wrap {
     width: 60px;
     height: 60px;
@@ -251,30 +226,23 @@ h2, h3, h4, .logo-text h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     background: var(--white);
     border: 1px solid rgba(158, 124, 80, 0.2);
     border-radius: 50%;
-    
-    /* Cor do ícone: Dourado Sólido Profissional para alto contraste */
-    color: var(--gold-solid); 
-    font-size: 24px; /* Ajuste para ícones de fonte */
+    color: var(--gold-solid);
+    font-size: 24px;
     position: relative;
     transition: all 0.3s ease;
-    
-    /* REMOVIDO: O filtro grayscale que tirava a cor e o contraste dos emojis */
-    filter: none; 
+    filter: none;
 }
 
-/* Removemos o ::after antigo para limpar o visual */
 .card-icon-wrap::after {
     display: none;
 }
 
-/* Estilos de Texto dentro do Card para melhoria de leitura */
 .card h4 {
     margin-bottom: 18px;
-    color: #4a4544; /* Cinza Carbono Profissional */
+    color: #4a4544;
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
     min-height: 3rem;
@@ -284,70 +252,17 @@ h2, h3, h4, .logo-text h1 {
 
 .card p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem; /* Elegância premium */
-    color: #6a6361; /* Cinza médio escuro para leitura clara */
+    font-size: 0.95rem;
+    color: #6a6361;
     line-height: 1.7;
 }
-
-/* Responsividade Básica (Manter sua lógica) */
-@media (max-width: 992px) {
-    .cards-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-    .cards-grid { grid-template-columns: 1fr; }
-    .card { padding: 30px 20px; }
-}
-
-/* Grid responsivo */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-@media (max-width: 992px) {
-    .cards-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-    .cards-grid { grid-template-columns: 1fr; }
-}
-
-/* ==========================================================================
-   Responsividade para os Cards
-   ========================================================================== */
-
-/* Telas médias (Tablets) - 2 Colunas */
-@media (max-width: 992px) {
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-/* Telas pequenas (Celulares) - 1 Coluna */
-@media (max-width: 600px) {
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .revisao {
-        padding: 60px 0;
-    }
-    
-    .card {
-        padding: 30px 20px;
-    }
-}
-
-
 
 /* ==========================================================================
    About Section
    ========================================================================== */
-   .about-pro {
+.about-pro {
     padding: 100px 0;
-    /* Fundo escuro para destacar da seção anterior */
-    background-color: var(--text-mid); 
+    background-color: var(--text-mid);
     color: var(--off-white);
 }
 
@@ -363,11 +278,11 @@ h2, h3, h4, .logo-text h1 {
     margin-bottom: 20px;
 }
 
-.about-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 60px; 
-    align-items: center; 
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
 .about-image {
@@ -378,10 +293,8 @@ h2, h3, h4, .logo-text h1 {
 
 .img-frame {
     position: relative;
-    /*order: 2px solid #D4AF37;*/
     padding: 5px;
-    /* Fundo da moldura acompanhando a seção */
-    background-color: var(--text-mid); 
+    background-color: var(--text-mid);
 }
 
 .img-frame img {
@@ -391,7 +304,6 @@ h2, h3, h4, .logo-text h1 {
     object-fit: cover;
 }
 
-/* Ajuste do botão outline para fundo escuro */
 .about-pro .btn-outline {
     border: 1px solid var(--white);
     color: var(--white);
@@ -401,6 +313,7 @@ h2, h3, h4, .logo-text h1 {
     background-color: var(--white);
     color: #2D2A29;
 }
+
 /* ==========================================================================
    Notícias
    ========================================================================== */
@@ -432,7 +345,7 @@ h2, h3, h4, .logo-text h1 {
 /* ==========================================================================
    Footer
    ========================================================================== */
-   .main-footer {
+.main-footer {
     background-color: var(--text-dark);
     color: #ffffff;
     padding: 60px 0 20px;
@@ -490,7 +403,6 @@ h2, h3, h4, .logo-text h1 {
     color: #FAD67B;
 }
 
-/* MAPA */
 .footer-map iframe {
     width: 100%;
     height: 260px;
@@ -498,7 +410,6 @@ h2, h3, h4, .logo-text h1 {
     border-radius: 10px;
 }
 
-/* LINHA INFERIOR */
 .footer-bottom {
     margin-top: 40px;
 }
@@ -523,8 +434,6 @@ h2, h3, h4, .logo-text h1 {
     color: #aaa;
 }
 
-
-
 .legal-links {
     display: flex;
     gap: 10px;
@@ -539,24 +448,8 @@ h2, h3, h4, .logo-text h1 {
     color: #fff;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-contacts a {
-        justify-content: center;
-    }
-
-    .footer-legal {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
 /* ==========================================================================
-   WhatsApp e Interatividade
+   WhatsApp Fixo
    ========================================================================== */
 .whatsapp-fixed {
     position: fixed;
@@ -582,44 +475,93 @@ h2, h3, h4, .logo-text h1 {
 
 .whatsapp-fixed img { width: 28px; height: 28px; }
 
+/* ==========================================================================
+   Formulário
+   ========================================================================== */
+#whatsappForm input:focus,
+#whatsappForm select:focus,
+#whatsappForm textarea:focus {
+    outline: none;
+    border-color: var(--gold-solid) !important;
+    box-shadow: 0 0 5px rgba(158, 124, 80, 0.2);
+}
+
+#whatsappForm label {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#contato-form .card:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    border-bottom: 4px solid var(--gold-solid);
+}
 
 /* ==========================================================================
-   Estilização Adicional do Formulário
+   RESPONSIVIDADE
    ========================================================================== */
-   #whatsappForm input:focus, 
-   #whatsappForm select:focus, 
-   #whatsappForm textarea:focus {
-       outline: none;
-       border-color: var(--gold-solid) !important;
-       box-shadow: 0 0 5px rgba(158, 124, 80, 0.2);
-   }
-   
-   #whatsappForm label {
-       color: var(--text-dark);
-       font-size: 0.9rem;
-       text-transform: uppercase;
-       letter-spacing: 1px;
-   }
-   
-   /* Ajuste específico para o card do formulário não herdar o hover de elevação se preferir */
-   #contato-form .card:hover {
-       transform: none;
-       box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-       border-bottom: 4px solid var(--gold-solid);
-   }
 
-/* 
-==========================================================================
-   Responsividade (Mobile)
-   ========================================================================== */
+/* Tablet */
+@media (max-width: 992px) {
+    .header-info-center {
+        display: none;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
     body {
-        font-size: 17px; /* Leve redução para telas pequenas */
+        font-size: 17px;
+    }
+
+    .main-header {
+        padding: 12px 0;
     }
 
     .header-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 12px;
+        align-items: center;
+    }
+
+    /* CORREÇÃO: logo e texto lado a lado no mobile */
+    .logo-area {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .logo-img {
+        height: 55px;
+    }
+
+    /* CORREÇÃO: nunca esconder o nome */
+    .logo-text {
+        display: block;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .logo-text span {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        width: auto;
     }
 
     .hero {
@@ -627,24 +569,63 @@ h2, h3, h4, .logo-text h1 {
     }
 
     .hero h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
-    .about-grid { 
-        grid-template-columns: 1fr; 
+    .hero p {
+        font-size: 1rem;
     }
 
-    .whatsapp-fixed span { 
-        display: none; 
+    .revisao {
+        padding: 60px 0;
     }
 
-    .footer-sections {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-fixed span {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .footer-contacts a {
+        justify-content: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-map iframe {
+        height: 200px;
     }
 }
 
+/* Telas muito pequenas */
 @media (max-width: 480px) {
-    .logo-text {
-        display: none;
+    .logo-img {
+        height: 45px;
+    }
+
+    .logo-text h1 {
+        font-size: 0.85rem;
+    }
+
+    .logo-text span {
+        font-size: 0.7rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
     }
 }
