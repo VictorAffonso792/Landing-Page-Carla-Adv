@@ -400,6 +400,7 @@ h2, h3, h4, .logo-text h1 {
     border-radius: 10px;
 }
 
+
 .footer-bottom {
     margin-top: 40px;
 }
@@ -436,6 +437,35 @@ h2, h3, h4, .logo-text h1 {
 
 .legal-links a:hover {
     color: #fff;
+}
+
+.footer-logo img {
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.footer-name-sub {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.footer-map address {
+    color: #ccc;
+    font-style: normal;
+    font-size: 1.1rem;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.footer-dev {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.footer-dev:hover {
+    color: #FAD67B;
 }
 
 /* ==========================================================================
