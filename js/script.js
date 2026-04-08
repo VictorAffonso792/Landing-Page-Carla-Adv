@@ -18,9 +18,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function selecionarOpcao(el, grp) {
-    document.querySelectorAll('#' + grp + ' .radio-opt')
-            .forEach(o => o.classList.remove('selected'));
+function selecionarOpcao(el, grupo) {
+    document.querySelectorAll(`input[name="${grupo}"]`).forEach(i => {
+        i.closest('.radio-opt').classList.remove('selected');
+    });
     el.classList.add('selected');
 }
 
@@ -29,7 +30,9 @@ function enviarWhatsApp() {
     const nasc      = document.getElementById('nascimento').value;
     const telefone  = document.getElementById('telefone').value.trim();
     const cidade    = document.getElementById('cidade').value.trim();
+    const cargo     = document.getElementById('cargo').value.trim();
     const mensagem  = document.getElementById('mensagem').value.trim();
+    const situacao  = document.querySelector('input[name="situacao"]:checked');
 
     if (!nome || !telefone) {
         alert('Por favor, preencha pelo menos o nome e o WhatsApp.');
@@ -38,10 +41,24 @@ function enviarWhatsApp() {
 
     const texto = `Olá, Dra. Carla!%0A%0A` +
         `*Nome:* ${nome}%0A` +
-        (nasc    ? `*Nascimento:* ${nasc}%0A` : '') +
+        (nasc      ? `*Nascimento:* ${nasc}%0A` : '') +
         `*Telefone:* ${telefone}%0A` +
-        (cidade  ? `*Cidade:* ${cidade}%0A` : '') +
-        (mensagem ? `%0A*Mensagem:* ${mensagem}` : '');
+        (cidade    ? `*Cidade:* ${cidade}%0A` : '') +
+        (situacao  ? `*Situação Funcional:* ${situacao.value}%0A` : '') +
+        (cargo     ? `*Cargo:* ${cargo}%0A` : '') +
+        (mensagem  ? `*Mensagem:* ${mensagem}` : '');
 
     window.open(`https://wa.me/5514997196040?text=${texto}`, '_blank');
 }
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('popupAviso').classList.add('popup-ativo');
+    }, 800);
+});
+function fecharPopup() {
+    document.getElementById('popupAviso').classList.remove('popup-ativo');
+}
+document.getElementById('popupAviso').addEventListener('click', function(e) {
+    if (e.target === this) fecharPopup();
+});
