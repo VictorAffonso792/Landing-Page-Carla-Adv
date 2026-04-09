@@ -327,7 +327,7 @@ h2, h3, h4, .logo-text h1 {
 /* ==========================================================================
    Footer
    ========================================================================== */
-.main-footer {
+   .main-footer {
     background-color: var(--text-dark);
     color: #ffffff;
     padding: 60px 0 20px;
@@ -337,51 +337,49 @@ h2, h3, h4, .logo-text h1 {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 50px;
-    align-items: center;
+    align-items: start;
 }
 
 .footer-logo img {
     height: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.footer-advogados {
+    border-left: 3px solid var(--gold-solid);
+    padding-left: 14px;
+    margin-bottom: 28px;
 }
 
 .footer-name {
     font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #fff;
 }
 
-.footer-name1 {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    
-}
-
-.footer-address {
-    font-style: normal;
-    color: #ccc;
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-    line-height: 1.5;
-    padding-top:  15px;
+.footer-name-sub {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #FAD67B;
 }
 
 .footer-contacts h4 {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     margin-bottom: 15px;
-    color: #fff;
+    color: #FAD67B;
 }
 
 .footer-contacts a {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #eee;
+    color: #ddd;
     text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
     transition: 0.3s;
 }
 
@@ -391,15 +389,30 @@ h2, h3, h4, .logo-text h1 {
 
 .footer-contacts i {
     color: #FAD67B;
+    width: 16px;
+    text-align: center;
 }
 
 .footer-map iframe {
     width: 100%;
     height: 260px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
+.footer-map address {
+    color: #bbb;
+    font-style: normal;
+    font-size: 0.88rem;
+    margin-top: 14px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.footer-map address i {
+    color: #FAD67B;
+    margin-right: 6px;
+}
 
 .footer-bottom {
     margin-top: 40px;
@@ -421,51 +434,37 @@ h2, h3, h4, .logo-text h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
-    color: #aaa;
-}
-
-.legal-links {
-    display: flex;
-    gap: 10px;
-}
-
-.legal-links a {
-    color: #aaa;
-    text-decoration: none;
-}
-
-.legal-links a:hover {
-    color: #fff;
-}
-
-.footer-logo img {
-    height: 70px;
-    margin-bottom: 20px;
-}
-
-.footer-name-sub {
-    font-size: 0.85rem;
-    font-weight: 400;
-}
-
-.footer-map address {
-    color: #ccc;
-    font-style: normal;
-    font-size: 1.1rem;
-    margin-top: 12px;
-    text-align: center;
+    font-size: 0.82rem;
+    color: #888;
 }
 
 .footer-dev {
-    color: #aaa;
+    color: #888;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     transition: color 0.3s;
 }
 
 .footer-dev:hover {
     color: #FAD67B;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-logo img {
+    height: 80px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.footer-info-content {
+    display: flex;
+    flex-direction: column;
 }
 
 /* ==========================================================================
@@ -634,9 +633,10 @@ h2, h3, h4, .logo-text h1 {
    Seção 9 — Atendimento Especializado
    ========================================================================== */
    .secao-atendimento {
-    padding: 30px 0;
+    padding: 100px 0;
     background: var(--text-dark);
     position: relative;
+    overflow: hidden;
 }
 
 .secao-atendimento::before {
@@ -644,10 +644,10 @@ h2, h3, h4, .logo-text h1 {
     position: absolute;
     inset: 0;
     background-image: url('../assets/icons/logoCarla.png');
-    background-size: 60%;
+    background-size: 2000px;
     background-repeat: no-repeat;
-    background-position: right center;
-    opacity: 0.17;
+    background-position: center center;
+    opacity: 0.07;
     z-index: 0;
 }
 
