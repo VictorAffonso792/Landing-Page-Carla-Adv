@@ -46,7 +46,7 @@ function enviarWhatsApp() {
         (cargo     ? `*Cargo:* ${cargo}%0A` : '') +
         (mensagem  ? `*Mensagem:* ${mensagem}` : '');
 
-        window.location.href = `https://wa.me/5514997497246?text=${texto}`;
+        window.location.href = `https://wa.me/5514998670232?text=${texto}`;
 }
 
 window.addEventListener('load', function() {
